@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+    --primary-color: #a855f7;
+    --primary-color-dark: #9333ea;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: #faf5ff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--extra-light);
+}
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4f4f4;
+    z-index: 99;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav__content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s ease-in-out;
+}
+
+ul li a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+#image-logo{
+    width: 300px;
+    border-radius: 20px;
+    object-fit: contain;
+    max-width: 100%;
+    margin: 20px;
+}
+
+
+ul li a:hover {
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+/* HERO SECTION */
+.section {
+    background-color: var(--extra-light);
+    padding-top: 120px; /* To prevent content from being hidden under fixed navbar */
+    text-align: center;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 4rem 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+span{
+    font-size: 30px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.title span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.description {
+    line-height: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* BUTTON STYLES */
+.action__btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hire__me {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.hire__me:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.Portfolio {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.Portfolio:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Responsive Navigation */
+@media (max-width: 750px) {
+    nav .checkbox {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: 0.3s ease-in-out;
+    }
+
+    nav #check:checked~ul {
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.2rem;
+    }
+}
+
+/* EXPERIENCE, SKILLS, EDUCATION, PROJECTS */
+#experience div,
+#skills div,
+#education div,
+#projects div,
+#programming-languages div,
+#interests div,
+#contact div {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--text-dark);
+    color: white;
+    font-size: 0.9rem;
+}
